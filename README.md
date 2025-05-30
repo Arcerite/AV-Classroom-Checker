@@ -30,6 +30,6 @@ This tool is designed for quick tech setup confirmation before a class, meeting,
 Clone the repo and run the script directly with Python:
 
 ```bash
-git clone https://github.com/yourusername/classroom-check.git
+git clone https://github.com/Arcerite/classroom-check.git
 cd classroom-check
 python classroom_check.py
