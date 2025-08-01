@@ -1,19 +1,20 @@
-# 🎓 Classroom Check
+# 🎓 Classroom Check (Python-Version)
 
 A simple interactive Python utility to walk through classroom technology checks — including audio, camera, document camera (Elmo), and Duo MFA bypass verification.
 
-This tool is designed for quick tech setup confirmation before a class, meeting, or event, and includes troubleshooting help in PDF format.
+This tool is designed to assist technicians and support staff in quickly verifying classroom AV readiness.
 
 ---
 
 ## 🚀 Features
 
-- ✅ Audio output test via `.wav` file
-- ✅ Camera and document camera checks
-- ✅ Duo MFA bypass check with IP capture
-- ✅ Interactive prompts (yes/no)
-- ✅ Opens relevant troubleshooting PDFs on failure
-- ✅ Compatible with PyInstaller (Windows EXE support)
+- ✅ Launches Windows Sound Settings to manually test audio output  
+- ✅ Camera and document camera (Elmo) checks via built-in Camera app  
+- ✅ Duo MFA bypass check with automatic IP address display  
+- ✅ Fully interactive terminal prompts  
+- ✅ Provides troubleshooting instructions in case of failure  
+- ✅ No dependencies beyond Python standard library  
+- ✅ Supports bundling as a Windows executable with PyInstaller  
 
 ---
 
@@ -27,11 +28,11 @@ This tool is designed for quick tech setup confirmation before a class, meeting,
 
 ## 📦 Installation (Development)
 
-Clone the repo and run the script directly with Python:
+Clone the repo and run the script directly:
 
 ```bash
 git clone https://github.com/Arcerite/AV-Classroom-Checker-For-GVSU.git
-cd classroom-check
+cd AV-Classroom-Checker-For-GVSU/Python-Version
 python classroom_check.py
 ```
 
@@ -39,7 +40,7 @@ python classroom_check.py
 
 ## 🛠️ Building the EXE with PyInstaller
 
-You can turn this project into a standalone Windows executable using [PyInstaller](https://pyinstaller.org/).
+You can turn this script into a standalone `.exe` file using [PyInstaller](https://pyinstaller.org/).
 
 ### ✅ Prerequisites
 
@@ -52,35 +53,39 @@ pip install pyinstaller
 
 ### 📦 Build Instructions
 
-Run this command from the project directory:
-
 ```bash
 pyinstaller --onedir --noconfirm --clean ^
   --icon=icon.ico ^
-  --add-data "sound_test.wav;." ^
-  --add-data "Audio.pdf;." ^
-  --add-data "Camera.pdf;." ^
-  --add-data "Elmo.pdf;." ^
-  Classroom_Checker.py
+  classroom_check.py
 ```
 
-> 💡 Note: Use `:` instead of `;` if you're on Linux or macOS:
-> ```bash
-> --add-data "sound_test.wav:."
-> ```
+> 💡 `--onedir` creates a folder with the `.exe` and all dependencies. You can use `--onefile` if you prefer a single-file EXE, though it may launch slower.
 
-### 📁 Output
+---
 
-- PyInstaller will create a new folder at `dist/Classroom_Checker/`
+## 📁 Output
+
+- PyInstaller will create a new folder at `dist/classroom_check/`
 - Inside that folder will be:
-  - `Classroom_Checker.exe` (your executable)
-  - All bundled `.dll`s and dependencies
-  - Your `.wav` and `.pdf` files
+  - `classroom_check.exe` (your executable)
+  - Required `.dll` and support files
 
-To run the app, just double-click the EXE or launch it from CMD:
+Launch the app by double-clicking the EXE or running it in CMD:
 
 ```bash
-dist\Classroom_Checker\Classroom_Checker.exe
+dist\classroom_check\classroom_check.exe
 ```
 
-> ⚠️ Keep the EXE and all data files in the same folder — do not move them individually.
+---
+
+## ⚡ Recommendation
+
+> 🔄 A **Java-Version** of this tool is also available in the repo. It launches faster and offers better native integration on Windows.  
+> You can find it under: `/Java-Version`
+
+---
+
+## 🧾 License
+
+MIT License.  
+© Caleb Peters / Arcerite
