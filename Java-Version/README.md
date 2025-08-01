@@ -1,8 +1,10 @@
-# 🎓 ClassroomCheck
+# 🎓 ClassroomCheck (Java Version)
 
 **Version 2.0 – by Caleb Peters / Arcerite**
 
 A lightweight, Windows-based Java console application that automates classroom AV and authentication checks. Designed for AV/IT technicians to quickly verify proper classroom setup including cameras, audio, document cameras (Elmo), and Duo MFA bypass.
+
+> ⚡ The **Java version is faster** and **recommended** for day-to-day use.
 
 ---
 
@@ -27,9 +29,27 @@ A lightweight, Windows-based Java console application that automates classroom A
 
 ## 🚀 How to Run
 
+You have two options to run the app:
+
+### ✅ Option 1: Easiest (No Compilation Needed)
+
+Use the provided `.class` file and `.bat` launcher:
+
+1. Download or clone the repo  
+2. Navigate to the `Java-Version` folder  
+3. Double-click `Run_Classroom_Check.bat` to launch the app
+
+> ☑️ This will automatically run the precompiled `ClassroomCheck.class` with one click — no setup or command line required.
+
+---
+
+### 🔧 Option 2: Manual Compile & Run
+
+If you want to compile it yourself:
+
 1. **Download** or clone the repo:  
    `git clone https://github.com/yourusername/ClassroomCheck.git`  
-   `cd ClassroomCheck`
+   `cd ClassroomCheck/Java-Version`
 
 2. **Compile the program**:  
    `javac ClassroomCheck.java`
@@ -52,11 +72,15 @@ A lightweight, Windows-based Java console application that automates classroom A
 
 ---
 
-## ⚙️ File Overview
+## 📁 File Overview
 
 ```
-ClassroomCheck.java    # Main application file (fully self-contained)
-README.md              # Project overview and instructions (this file)
+Java-Version/
+│
+├── ClassroomCheck.java        # Main application source
+├── ClassroomCheck.class       # Precompiled Java bytecode
+├── Run_Classroom_Check.bat    # Easy launcher for Windows users
+├── README.md                  # Project instructions (this file)
 ```
 
 ---
@@ -66,6 +90,7 @@ README.md              # Project overview and instructions (this file)
 - **App doesn't open system dialogs**: Ensure you're on Windows and running the terminal with permission to execute apps.  
 - **"control mmsys.cpl sounds" doesn't open**: This only works on Windows. Not compatible with macOS or Linux.  
 - **MFA test fails**: Check network, Duo setup, and review your IP if needed for allowlisting.  
+- **.class file won’t run**: Make sure Java is installed and added to your PATH.
 
 ---
 
