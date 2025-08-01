@@ -30,10 +30,10 @@ A standalone Java console utility designed for quick AV validation using Windows
 
 An interactive, scriptable classroom checker built in Python 3 — designed for flexibility, EXE conversion, and PDF-linked troubleshooting documentation.
 
-- ✅ Audio output test via `.wav` file
+- ✅ Audio output test
 - ✅ Camera and Elmo input verification
 - ✅ Duo MFA bypass check with local IP capture
-- ✅ Opens troubleshooting PDFs if issues are detected
+- ✅ Opens troubleshooting guides if issues are detected
 - ✅ Compatible with PyInstaller for EXE packaging
 
 🔗 **[View Python Version README](./Python-Version/README.md)**
