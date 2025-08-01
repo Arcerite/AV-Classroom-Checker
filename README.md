@@ -1,6 +1,6 @@
 # 🎓 ClassroomCheck
 
-**Version 1.5 – by Caleb Peters / Arcerite**
+**Version 2.0 – by Caleb Peters / Arcerite**
 
 A lightweight, Windows-based Java console application that automates classroom AV and authentication checks. Designed for AV/IT technicians to quickly verify proper classroom setup including cameras, audio, document cameras (Elmo), and Duo MFA bypass.
 
