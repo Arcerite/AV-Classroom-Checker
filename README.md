@@ -1,86 +1,78 @@
-# 🎓 Classroom Check
+# 🎓 ClassroomCheck
 
-A simple interactive Python utility to walk through classroom technology checks — including audio, camera, document camera (Elmo), and Duo MFA bypass verification.
+**Version 1.5 – by Caleb Peters / Arcerite**
 
-This tool is designed for quick tech setup confirmation before a class, meeting, or event, and includes troubleshooting help in PDF format.
+A lightweight, Windows-based Java console application that automates classroom AV and authentication checks. Designed for AV/IT technicians to quickly verify proper classroom setup including cameras, audio, document cameras (Elmo), and Duo MFA bypass.
 
 ---
 
-## 🚀 Features
+## ✅ Features
 
-- ✅ Audio output test via `.wav` file
-- ✅ Camera and document camera checks
-- ✅ Duo MFA bypass check with IP capture
-- ✅ Interactive prompts (yes/no)
-- ✅ Opens relevant troubleshooting PDFs on failure
-- ✅ Compatible with PyInstaller (Windows EXE support)
+- 📸 **Camera Test** – Verifies built-in webcam functionality  
+- 📄 **Doc Cam (Elmo) Test** – Confirms document camera operation  
+- 🔊 **Speaker/Audio Check** – Opens Windows sound settings for manual speaker test  
+- 🔐 **Duo MFA Override Test** – Opens GVSU login and logs local IP if bypass fails  
+- 🛠️ **Troubleshooting Mode** – Guides user through resolving common issues  
+- 📋 **Results Summary** – Final report of all system checks  
 
 ---
 
 ## 🖥️ Requirements
 
-- **Windows OS**
-- **Python 3.7+**
-- No external libraries required (standard library only)
+- Operating System: **Windows 10 or 11**  
+- Java Version: **Java 8 or newer**  
+- Terminal: CMD or any Windows terminal supporting `cls`  
 
 ---
 
-## 📦 Installation (Development)
+## 🚀 How to Run
 
-Clone the repo and run the script directly with Python:
+1. **Download** or clone the repo:  
+   `git clone https://github.com/yourusername/ClassroomCheck.git`  
+   `cd ClassroomCheck`
 
-```bash
-git clone https://github.com/Arcerite/AV-Classroom-Checker-For-GVSU.git
-cd classroom-check
-python classroom_check.py
+2. **Compile the program**:  
+   `javac ClassroomCheck.java`
+
+3. **Run the program**:  
+   `java ClassroomCheck`
+
+---
+
+## 🧪 What to Expect
+
+| Step               | What Happens                                                      |
+|--------------------|-------------------------------------------------------------------|
+| 🎥 Camera Check     | Opens Windows Camera app – user confirms webcam is working        |
+| 📄 Elmo Check       | Instructs user to test document cam via camera source switch      |
+| 🔐 Duo MFA Test     | Opens GVSU portal – checks if Duo MFA is bypassed                 |
+| 🔊 Audio Check      | Opens Sound Settings – user uses native "Test" speaker function   |
+| 🧠 Troubleshooting  | If any check fails, helpful steps are provided                    |
+| 🧾 Summary          | Displays all test results at the end                              |
+
+---
+
+## ⚙️ File Overview
+
+```
+ClassroomCheck.java    # Main application file (fully self-contained)
+README.md              # Project overview and instructions (this file)
 ```
 
 ---
 
-## 🛠️ Building the EXE with PyInstaller
+## ❓ Troubleshooting
 
-You can turn this project into a standalone Windows executable using [PyInstaller](https://pyinstaller.org/).
+- **App doesn't open system dialogs**: Ensure you're on Windows and running the terminal with permission to execute apps.  
+- **"control mmsys.cpl sounds" doesn't open**: This only works on Windows. Not compatible with macOS or Linux.  
+- **MFA test fails**: Check network, Duo setup, and review your IP if needed for allowlisting.  
 
-### ✅ Prerequisites
+---
 
-- Python 3.7+ (on Windows)
-- PyInstaller installed:
+## 📜 License
 
-```bash
-pip install pyinstaller
+This project is licensed under the MIT License. You are free to use, modify, and distribute with attribution.
+
 ```
-
-### 📦 Build Instructions
-
-Run this command from the project directory:
-
-```bash
-pyinstaller --onedir --noconfirm --clean ^
-  --icon=icon.ico ^
-  --add-data "sound_test.wav;." ^
-  --add-data "Audio.pdf;." ^
-  --add-data "Camera.pdf;." ^
-  --add-data "Elmo.pdf;." ^
-  Classroom_Checker.py
+MIT License © 2025 Caleb Peters / Arcerite
 ```
-
-> 💡 Note: Use `:` instead of `;` if you're on Linux or macOS:
-> ```bash
-> --add-data "sound_test.wav:."
-> ```
-
-### 📁 Output
-
-- PyInstaller will create a new folder at `dist/Classroom_Checker/`
-- Inside that folder will be:
-  - `Classroom_Checker.exe` (your executable)
-  - All bundled `.dll`s and dependencies
-  - Your `.wav` and `.pdf` files
-
-To run the app, just double-click the EXE or launch it from CMD:
-
-```bash
-dist\Classroom_Checker\Classroom_Checker.exe
-```
-
-> ⚠️ Keep the EXE and all data files in the same folder — do not move them individually.
